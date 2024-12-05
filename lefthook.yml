@@ -1,0 +1,14 @@
+pre-commit:
+  commands:
+    lint:
+      glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      run: pnpm lint
+      stage_fixed: true
+    format:
+      glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      run: pnpm format
+      stage_fixed: true
+commit-msg:
+  commands:
+    lint-commit:
+      run: pnpm dlx commitlint --edit "$1"
